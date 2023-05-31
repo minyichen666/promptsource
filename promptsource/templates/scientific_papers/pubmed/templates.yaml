@@ -1,6 +1,25 @@
 dataset: scientific_papers
 subset: pubmed
 templates:
+  5aa1b12d-ca83-4747-b05b-cf67e0e0abd7: !Template
+    answer_choices: null
+    id: 5aa1b12d-ca83-4747-b05b-cf67e0e0abd7
+    jinja: 'Write the first 100 words abstract for the following scientific article:
+      {{ article }}
+
+      |||
+
+      {{ abstract.strip().split('' '')[:100] |join('' '')}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: write_100_words_abstract_for_article
+    reference: write 100 words abstract for a scientific article
   7b54d0d8-ea64-4828-bb1c-a12fd3162c3f: !Template
     answer_choices: null
     id: 7b54d0d8-ea64-4828-bb1c-a12fd3162c3f
